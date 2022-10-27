@@ -1,24 +1,48 @@
-# README
+# 主婦レシピ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリ説明
 
-Things you may want to cover:
+主婦間で繋がる料理。<br>
+そのレシピを共有・改良・発見していく楽しみを目的としたアプリです。
 
-* Ruby version
+## users(devise) テーブル
 
-* System dependencies
+| Column             | Type    | Options                    |
+| ------------------ | ------- | -------------------------- |
+| nickname           | string  | null: false                |
+| email              | string  | null: false, unique: true  |
+| encrypted_password | string  | null: false                |
+| prefecture_id      | integer | null: false                |
 
-* Configuration
+### Association
 
-* Database creation
+- has_many :recipes
+- has_many :comments
 
-* Database initialization
+## recipes テーブル
 
-* How to run the test suite
+| Column                 | Type       | Options                        |
+| ---------------------- | ---------- | ------------------------------ |
+| user                   | references | null: false, foreign_key: true |
+| name                   | string     | null: false                    |
+| info                   | text       | null: false                    |
+| category_id            | integer    | null: false                    |
+| cooking_time_id        | integer    | null: false                    |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
 
-* Deployment instructions
+- belongs_to :user
+- has_many :comments
 
-* ...
+## comments テーブル
+
+| Column                 | Type       | Options                        |
+| ---------------------- | ---------- | ------------------------------ |
+| user                   | references | null: false, foreign_key: true |
+| recipe                 | references | null: false, foreign_key: true |
+| text                   | text       | null: false                    |
+
+### Association
+
+- belongs_to :user
+- belongs_to :recipe
