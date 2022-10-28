@@ -4,8 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :recipes
+  
   with_options presence: true do
     validates :nickname, :prefecture_id
   end
-      
+  
+
 end
