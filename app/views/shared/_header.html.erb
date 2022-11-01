@@ -1,6 +1,6 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
   <header class='index-header d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4'>
-          <h1 class="header-title">H.R</h1>
+          <h1><%= link_to "H.R", root_path, class:"header-title" %></h1>
           <div class="text-end">
             <% if user_signed_in? %>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-primary me-2 logout" %>
