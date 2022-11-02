@@ -1,4 +1,21 @@
+  <div class="top-background" >
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
 
-    <h2 class="name">
-      <%= @recipe.name %>
-    </h2>
+        <h2 class="name">
+          <%= @recipe.name %>
+        </h2>
+        <div class="item-img-content">
+          <%= image_tag @recipe.image, class:"image-box" %>
+        </div>
+        <% if current_user.id == @recipe.user_id %>
+          <%= link_to "商品の編集", edit_recipe_path, method: :get, class: "item-red-btn" %>
+          <p class="or-text">or</p>
+          <%= link_to "削除", recipe_path, method: :delete, class:"item-destroy" %>
+        <% end %>
+
+
+
+      </div>
+    </div>
+  </div>
