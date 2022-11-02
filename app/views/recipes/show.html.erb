@@ -9,9 +9,9 @@
           <%= image_tag @recipe.image, class:"image-box" %>
         </div>
         <% if current_user.id == @recipe.user_id %>
-          <%= link_to "商品の編集", edit_recipe_path, method: :get, class: "item-red-btn" %>
-          <p class="or-text">or</p>
-          <%= link_to "削除", recipe_path, method: :delete, class:"item-destroy" %>
+          <%= link_to "商品の編集", edit_recipe_path, method: :get, class: "btn btn-primary" %>
+          <h2 class="or-text">or</h2>
+          <%= link_to "削除", recipe_path, method: :delete, class:"btn-destroy" %>
         <% end %>
 
 

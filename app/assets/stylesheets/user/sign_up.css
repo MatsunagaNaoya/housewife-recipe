@@ -2,3 +2,14 @@
   color: black;
   
 }
+
+.login-top {
+  padding-top: 150px;
+}
+
+.field {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}

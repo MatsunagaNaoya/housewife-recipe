@@ -1,3 +1,9 @@
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .index-header {
   position: fixed;
   top: 0; /* 上部から配置の基準位置を決める */
@@ -17,4 +23,9 @@
   border: dashed 2px white;
   padding: 0.2em 0.5em;
   color: #0d36d6;
+}
+
+.hello-user {
+  padding-right: 10px;
+  font-size: 18px;
 }

@@ -1,0 +1,33 @@
+  <%= form_with model: @recipe, local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+
+  <div class="new-top-coler">
+    <%# 商品画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        商品画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <%# /商品画像 %>
+        <div class="weight-bold-text">名前</div>
+          <%= f.text_area :name, class:"recipes-text", id:"recipe-name", placeholder:"料理名(最大４０文字まで)", maxlength:"40" %>
+        <div class="weight-bold-text">調理方法</div>
+          <%= f.text_area :info, class:"recipes-text", id:"recipe-info", placeholder:"料理の作り方・材料を記載" ,rows:"7" ,maxlength:"1000" %>
+        <div class="weight-bold-text">料理のカテゴリー</div>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"recipe-category"}) %>
+        <div class="weight-bold-text">料理時間</div>
+          <%= f.collection_select(:cooking_time_id, CookingTime.all, :id, :name, {}, {class:"select-box", id:"recipe-cooking-time"}) %>
+        <div class="sell-btn-contents">
+          <%= f.submit "レシピ保存" ,class:"btn btn-primary btn-lg px-4 gap-3" %>
+          <%=link_to 'もどる', root_path, class:"btn btn-outline-secondary btn-lg px-4 gap-3" %>
+        </div>
+  </div>
+
+<% end %>
