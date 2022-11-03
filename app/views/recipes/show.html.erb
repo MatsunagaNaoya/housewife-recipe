@@ -18,11 +18,11 @@
           <%= @recipe.cooking_time.name %>
         </h2>
 
-        <% if current_user.id == @recipe.user_id %>
-          <%= link_to "商品の編集", edit_recipe_path, method: :get, class: "btn btn-primary" %>
-          <h2 class="or-text">or</h2>
-          <%= link_to "削除", recipe_path, method: :delete, class:"btn-destroy" %>
-        <% end %>
+          <% if user_signed_in? && @item.order == nil %>
+            <%= link_to "商品の編集", edit_recipe_path, method: :get, class: "btn btn-primary" %>
+            <h2 class="or-text">or</h2>
+            <%= link_to "削除", recipe_path, method: :delete, class:"btn-destroy" %>
+          <% end %>
 
 
 
