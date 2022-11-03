@@ -2,7 +2,7 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-image: radial-gradient(rgba(173, 247, 255, 0.547) 0%, rgba(0, 0, 0, 0.1) 100%),
+  background-image: radial-gradient(rgba(173, 247, 255, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%),
     url("housewife.png");
   background-attachment: fixed;
   background-size: cover;
