@@ -19,5 +19,5 @@ class CookingTime < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :recipe
+  has_many :recipes
 end
