@@ -26,7 +26,6 @@
           <%= f.collection_select(:cooking_time_id, CookingTime.all, :id, :name, {}, {class:"select-box", id:"recipe-cooking-time"}) %>
         <div class="sell-btn-contents">
           <%= f.submit "レシピ保存" ,class:"btn btn-primary btn-lg px-4 gap-3" %>
-          <%=link_to 'もどる', root_path, class:"btn btn-outline-secondary btn-lg px-4 gap-3" %>
         </div>
   </div>
 
