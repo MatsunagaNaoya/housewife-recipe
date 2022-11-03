@@ -1,7 +1,7 @@
   <%= form_with model: @recipe, local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
 
-  <div class="new-top-coler">
+  <div class="new-top-coler box-padding">
     <%# 商品画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
@@ -26,7 +26,6 @@
           <%= f.collection_select(:cooking_time_id, CookingTime.all, :id, :name, {}, {class:"select-box", id:"recipe-cooking-time"}) %>
         <div class="sell-btn-contents">
           <%= f.submit "レシピ保存" ,class:"btn btn-primary btn-lg px-4 gap-3" %>
-          <%=link_to 'もどる', root_path, class:"btn btn-outline-secondary btn-lg px-4 gap-3" %>
         </div>
   </div>
 

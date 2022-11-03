@@ -1,7 +1,9 @@
 class Recipe < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :user
   has_one_attached :image
-  
+  belongs_to :category
+  belongs_to :cooking_time
 
   with_options presence: true do
     validates :image, :name, :info

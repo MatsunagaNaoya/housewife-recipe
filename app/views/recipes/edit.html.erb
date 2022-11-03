@@ -2,4 +2,10 @@
   <h1 class='new-top'>編集ページ</h1>
     <%= render 'shared/new_edit', locals: { f: @recipe } %>
   <%# locals: { f: @recipe } %>
+    <div class="new-top-coler box-padding">
+      <div class="sell-btn-contents">
+        <%=link_to 'もどる', recipe_path, class:"btn btn-outline-secondary btn-lg px-4 gap-3" %>
+      </div>
+    </div>
+
 </div>

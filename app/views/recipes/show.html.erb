@@ -1,13 +1,23 @@
   <div class="top-background" >
     <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
+      <div class="recipe-show">
 
-        <h2 class="name">
+        <h2 class="recipe-name">
           <%= @recipe.name %>
         </h2>
         <div class="item-img-content">
-          <%= image_tag @recipe.image, class:"image-box" %>
+          <%= image_tag @recipe.image, class:"item-box-img" %>
         </div>
+        <h2 class="recipe-name">
+          <%= @recipe.info %>
+        </h2>
+        <h2 class="recipe-name">
+          <%= @recipe.category.name %>
+        </h2>
+        <h2 class="recipe-name">
+          <%= @recipe.cooking_time.name %>
+        </h2>
+
         <% if current_user.id == @recipe.user_id %>
           <%= link_to "商品の編集", edit_recipe_path, method: :get, class: "btn btn-primary" %>
           <h2 class="or-text">or</h2>
