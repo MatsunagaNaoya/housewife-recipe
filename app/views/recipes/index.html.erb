@@ -11,41 +11,44 @@
       </div>
     </div>
 
-    <div class="container">
-      <% if @recipes.present? %>
-        <% @recipes.each do |recipe| %>
-        <div class="col row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            <%= link_to recipe_path(recipe.id) do %>
+    <div class="album py-5">
+      <div class="container index-recipe">
+        <% if @recipes.present? %>
+          <% @recipes.each do |recipe| %>
+          <div class="box">
+            <div class="col">
               <div class="card shadow-sm">
-                  <%= image_tag recipe.image, class: "card-body" %>
-                    <p class="card-text"><%= recipe.name %></p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                      </div>
-                    </div>
-              </div>
-              </div>
-            <% end %>
-        </div>
-      <% end %>
-      <% else %>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-          <div class="col">
-            <div class="card shadow-sm">
-              <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
-              <div class="card-body">
-                <p class="card-text">レシピを投稿してね</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  </div>
-                  <small class="text-muted">9 mins</small>
+                <%= link_to recipe_path(recipe.id) do %>
+                  <%= image_tag recipe.image, class: "bd-placeholder-img card-img-top" %>
+                <% end %>
+                <div class="card-body">
+                  <p class="card-text">料理名:<br>
+                  <%= recipe.name %></p>
+                  <p class="card-text"><%= recipe.user.nickname %>さん</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-    <% end %>
+          <% end %>
+        <% else %>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+              <div class="card shadow-sm">
+                <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
+                <div class="card-body">
+                  <p class="card-text">レシピを投稿してね</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>

@@ -1,0 +1,14 @@
+.index-recipe {
+  display: flex;
+  width: 100vw;
+}
+
+.box {
+  width: 50vh;
+  height: 50vh;
+  padding: 1vw;
+}
+
+.index-text {
+  text-decoration: none;
+}
