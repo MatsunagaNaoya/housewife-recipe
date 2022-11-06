@@ -11,7 +11,7 @@
   width: 100%; /* ヘッダーの横幅を指定する */
   height: 100px; /* ヘッダーの高さを指定する */
   padding: 0 20px;
-  background-color:rgba(255,255,255);
+  background-color:rgb(255,255,255);
   background-blend-mode:lighten;
   z-index: 1;
 }
