@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :recipes
 
   with_options presence: true do
-    validates :nickname, :prefecture_id
+    validates :nickname
+    validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
   end
 end
