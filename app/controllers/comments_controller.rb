@@ -1,7 +1,10 @@
 class CommentsController < ApplicationController
   def create
-    comment = Comment.create(comment_params)
-    redirect_to "/recipes/#{comment.recipe.id}"
+    @comment = Comment.new(comment_params)
+    @recipe = Recipe.find(params[:recipe_id])
+    if @comment.save
+      CommentChannel.broadcast_to @recipe, { comment: @comment, user: @comment.user } #追加
+    end
   end
 
   private
