@@ -1,12 +1,12 @@
   <div class="top-background" >
     <div class="row py-lg-5">
       <div class="recipe-show">
-
-        <h2 class="recipe-name">
-          <%= @recipe.name %>
-        </h2>
+        <div class="recipe-name">料理名</div>
+          <div class="name">
+            <%= @recipe.name %>
+          </div>
         <div class="item-img-content">
-          <%= image_tag @recipe.image, class:"item-box-img" %>
+          <%= image_tag @recipe.image, class:"recipe-box" %>
         </div>
         <h2 class="recipe-name">
           <%= @recipe.info %>
@@ -23,6 +23,25 @@
             <h2 class="or-text">or</h2>
             <%= link_to "削除", recipe_path, method: :delete, class:"btn-destroy" %>
           <% end %>
+
+          <div class="comments-index" id="comments">
+            <h4>＜コメント一覧＞</h4>
+              <% @recipe.comments.reverse.each do |comment| %>
+                <div class="comment">
+                  <p class="user-info"><%= comment.user.nickname %>： </p>
+                  <p><%= comment.text%></p>
+                </div>
+              <% end %>
+          </div>
+
+          <div class="comment-form">
+            <% if user_signed_in? %>
+              <%= form_with model: [@recipe, @comment], id: "comment-form" do |f| %>
+                <%= f.text_area :text , class: "comment-text"%>
+                <%= f.submit "コメントを送る", class: "comment-submit" %>
+              <% end %>
+            <% end %>
+          </div>
       </div>
     </div>
   </div>

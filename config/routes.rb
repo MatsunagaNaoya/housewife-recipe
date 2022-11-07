@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'recipes#index'
-  resources :recipes
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :recipes do
+    resources :comments, only: :create
+  end
 end
-#resources :items do
