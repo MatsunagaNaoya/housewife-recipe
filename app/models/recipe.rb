@@ -5,6 +5,11 @@ class Recipe < ApplicationRecord
   belongs_to :category
   belongs_to :cooking_time
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+
+  def liked_by?(user)
+    likes.exists?(user_id: user.id)
+  end
 
   with_options presence: true do
     validates :image, :name, :info
