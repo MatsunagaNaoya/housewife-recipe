@@ -28,6 +28,7 @@
             </tr>
           </tbody>
         </table>
+        <%= render "shared/likes", recipe: @recipe %>
           <div class="edit-box">
             <% if user_signed_in? && @recipe.user == current_user %>
               <%= link_to "商品の編集", edit_recipe_path, method: :get, class: "btn btn-primary" %>

@@ -25,7 +25,7 @@
                   <p class="card-text">料理名:<br>
                   <%= recipe.name %></p>
                   <p class="card-text"><%= recipe.user.nickname %>さん</p>
-                  <i class="fa-solid fa-heart"></i>
+                  <%= render "shared/likes", recipe: recipe  %>
                 </div>
               </div>
             </div>

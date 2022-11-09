@@ -19,10 +19,14 @@
         </div>
       </div>
 
-      <div class="field w-100 btn btn-lg btn-primary">
+      <div class="field w-100 btn btn-lg btn-primary sign-in">
         <%= f.submit "ログイン" %>
       </div>
-    
+
+      <div class="form-sign-in">
+      <%= link_to "アカウントがまだの方はこちら", new_user_registration_path, class: "log-in" %>
+      </div>
+
   </main>
 <% end %>
 </body>
