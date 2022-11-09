@@ -36,12 +36,14 @@
               <%= link_to "削除", recipe_path, method: :delete, class:"btn-destroy", data: {confirm: "本当に削除しますか？"} %>
             <% end %>
           </div>
-          <div class="comments-index" id="comments">
+          <div class="comments-index">
             <h4>★コメント一覧★</h4>
               <% @recipe.comments.reverse.each do |comment| %>
-                <div class="comment">
-                  <p class="user-info"><%= comment.user.nickname %>： </p>
-                  <p><%= comment.text%></p>
+                <div id="comments">
+                  <div class="comment">
+                    <p class="user-info"><%= comment.user.nickname %>： </p>
+                    <p><%= comment.text%></p>
+                  </div>
                 </div>
               <% end %>
 
