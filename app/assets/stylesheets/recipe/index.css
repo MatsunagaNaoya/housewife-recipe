@@ -13,3 +13,12 @@
 .index-text {
   text-decoration: none;
 }
+
+.item-img-content {
+  position: relative;
+}
+
+.item-img {
+  width: 33vh;
+  height: 33vh;
+}
