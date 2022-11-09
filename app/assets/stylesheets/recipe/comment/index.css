@@ -1,25 +1,21 @@
 .comments-index {
+  background-color: rgba(254, 236, 255, 0.9);
   display: block;
   text-align: center;
+  border-radius: 5px;
 }
 
 .comment-form{
   display: flex;
-}
-
-.comment-text{
-  display: block;
-  margin-top: 20px;
-  border-radius: 10px;
-  background-color: rgba(146, 246, 173, 0.8);
-  border: 1px solid #09bd66;
+  text-align: center;
 }
 
 .comment-submit{
-  display: block;
+  display: inline-block;
   margin-top: 20px;
   padding: 5px;
-  background-color: #fff;
+  background-color:  rgba(74, 252, 195, 0.876);
+  border: 1px solid #ffffff;
   border-radius: 5px;
 }
 
@@ -28,11 +24,18 @@
   background-color:  rgba(74, 252, 195, 0.876);
   border: 1px solid #09bd66;
   border-radius: 5px;
-
 }
 
 .comment p{
    margin: 0;
+}
+
+.comment-text{
+  display: block;
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: rgba(146, 246, 173, 0.5);
+  border: 1px solid #09bd66;
 }
 
 .user-info{

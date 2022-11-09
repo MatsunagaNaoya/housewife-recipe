@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @recipe = Recipe.find(params[:recipe_id])
     if @comment.save
-      CommentChannel.broadcast_to @recipe, { comment: @comment, user: @comment.user } #追加
+      CommentChannel.broadcast_to @recipe, { comment: @comment, user: @comment.user }
     end
   end
 
