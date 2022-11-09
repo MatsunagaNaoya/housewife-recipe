@@ -14,6 +14,10 @@
   background-color: rgba(123, 16, 16, 0.6);
   border-color: red;
 }
+.edit-box {
+  display: flex;
+  align-items: center;
+}
 
 .or-text{
   margin: 20px;
@@ -47,4 +51,20 @@
 .name {
   font-size: 40px;
   font-family: serif;
+}
+
+.detail-item {
+  width: 20%;
+  background-color: rgba(254, 236, 255, 0.9);
+  border: 1px solid rgb(253, 207, 255);
+  font-size: 14px;
+  text-align: center;
+}
+
+.detail-value {
+  width: 80%;
+  padding: 20px;
+  background-color: rgba(254, 236, 255, 0.9);
+  border: 1px solid rgb(253, 207, 255);
+  font-size: 14px;
 }
