@@ -16,19 +16,21 @@
         <% if @recipes.present? %>
           <% @recipes.each do |recipe| %>
           <div class="box">
-            <div class="col">
+            
               <div class="card shadow-sm">
-                <%= link_to recipe_path(recipe.id) do %>
-                  <%= image_tag recipe.image, class: "bd-placeholder-img card-img-top" %>
-                <% end %>
+                <div class="item-img-content">
+                  <%= link_to recipe_path(recipe.id) do %>
+                    <%= image_tag recipe.image, class: "item-img" %>
+                  <% end %>
+                </div>
                 <div class="card-body">
                   <p class="card-text">料理名:<br>
                   <%= recipe.name %></p>
                   <p class="card-text"><%= recipe.user.nickname %>さん</p>
-                  <%= render "shared/likes", recipe: recipe  %>
+                    <%= render "shared/likes", recipe: recipe  %>
                 </div>
               </div>
-            </div>
+            
           </div>
           <% end %>
         <% else %>

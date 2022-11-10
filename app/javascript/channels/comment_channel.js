@@ -22,7 +22,7 @@ if(location.pathname.match(/\/recipes\/\d/)){
           <p>${data.comment.text}</p>
         </div>`
       const comments = document.getElementById("comments")
-      comments.insertAdjacentHTML('beforeend', html)
+      comments.insertAdjacentHTML('afterbegin', html)
       const commentForm = document.getElementById("comment-form")
       commentForm.reset();
             // Called when there's incoming data on the websocket for this channel

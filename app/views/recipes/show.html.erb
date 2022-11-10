@@ -28,7 +28,11 @@
             </tr>
           </tbody>
         </table>
-        <%= render "shared/likes", recipe: @recipe %>
+        <% if user_signed_in? %>
+          <div class="like">
+            <%= render "shared/likes", recipe: @recipe %>
+          </div>
+        <% end %>
           <div class="edit-box">
             <% if user_signed_in? && @recipe.user == current_user %>
               <%= link_to "商品の編集", edit_recipe_path, method: :get, class: "btn btn-primary" %>
@@ -36,12 +40,14 @@
               <%= link_to "削除", recipe_path, method: :delete, class:"btn-destroy", data: {confirm: "本当に削除しますか？"} %>
             <% end %>
           </div>
-          <div class="comments-index" id="comments">
-            <h4>★コメント一覧★</h4>
+          <div class="comments-index">
+            <h4 class="comments-note">★コメント一覧★</h4>
               <% @recipe.comments.reverse.each do |comment| %>
-                <div class="comment">
-                  <p class="user-info"><%= comment.user.nickname %>： </p>
-                  <p><%= comment.text%></p>
+                <div id="comments">
+                  <div class="comment">
+                    <p class="user-info"><%= comment.user.nickname %>： </p>
+                    <p><%= comment.text%></p>
+                  </div>
                 </div>
               <% end %>
 

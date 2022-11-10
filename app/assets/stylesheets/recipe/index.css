@@ -5,11 +5,26 @@
 }
 
 .box {
-  width: 50vh;
-  height: 50vh;
   padding: 1vw;
 }
 
 .index-text {
+  text-decoration: none;
+}
+
+.item-img-content {
+  position: relative;
+}
+
+.item-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.like-index{
+  color: #0d6efd;
+}
+
+.like-count-border{
   text-decoration: none;
 }

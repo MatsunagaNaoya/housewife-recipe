@@ -1,15 +1,51 @@
+/*コメント一覧全体*/
 .comments-index {
   background-color: rgba(254, 236, 255, 0.9);
+  border: 1px solid rgb(253, 207, 255);
   display: block;
   text-align: center;
   border-radius: 5px;
+  padding-bottom: 10px;
 }
 
+/*コメント一覧*/
+.comments-note{
+  color: #db1995;
+}
+
+/*コメントユーザー名*/
+.user-info{
+  color: #db1995;
+  font-weight: bold;
+}
+
+/*コメント一文の並び(ユーザー名とコメントを横並び)*/
+.comment{
+  display: flex;
+}
+
+/*コメント一文の合間を無くす*/
+.comment p{
+  margin: 1px;
+}
+
+/*コメント入力フォーム*/
+.comment-text{
+  display: block;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: rgba(250, 255, 163, 0.5);
+  border: 1px solid #09bd66;
+}
+
+
+/*コメント入力・送信の並び*/
 .comment-form{
   display: flex;
-  text-align: center;
+  justify-content: center;
 }
 
+/*コメント送信コマンド*/
 .comment-submit{
   display: inline-block;
   margin-top: 20px;
@@ -17,28 +53,4 @@
   background-color:  rgba(74, 252, 195, 0.876);
   border: 1px solid #ffffff;
   border-radius: 5px;
-}
-
-.comment{
-  display: flex;
-  background-color:  rgba(74, 252, 195, 0.876);
-  border: 1px solid #09bd66;
-  border-radius: 5px;
-}
-
-.comment p{
-   margin: 0;
-}
-
-.comment-text{
-  display: block;
-  margin-top: 20px;
-  border-radius: 10px;
-  background-color: rgba(146, 246, 173, 0.5);
-  border: 1px solid #09bd66;
-}
-
-.user-info{
-  color: gray;
-  font-weight: bold;
 }
