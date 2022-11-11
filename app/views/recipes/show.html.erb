@@ -29,8 +29,8 @@
           </tbody>
         </table>
         <% if user_signed_in? %>
-          <div class="like", id="likes_buttons_<%= recipe.id %>">
-            <%= render "likes/like", recipe: recipe %>
+          <div class="like", id="likes_buttons_<%= @recipe.id %>">
+            <%= render "likes/like", recipe: @recipe %>
           </div>
         <% end %>
           <div class="edit-box">
