@@ -7,10 +7,6 @@ class Recipe < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  def liked_by?(user)
-    likes.exists?(user_id: user.id)
-  end
-
   with_options presence: true do
     validates :image, :name, :info
     validates :category_id, :cooking_time_id, numericality: { other_than: 1, message: "can't to in valid" }
