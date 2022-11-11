@@ -1,0 +1,19 @@
+<% if user_signed_in? %>
+  <% if current_user.liked_by?(recipe.id) %>
+  <td>
+    <%= link_to destroy_like_path(recipe), class: "like-count-border", method: :DELETE, remote: true do %>
+      いいね
+      <i class="fas fa-heart"></i>
+      <%= recipe.likes.count %>
+    <% end %>
+  </td>
+ <% else %>
+  <td>
+    <%= link_to create_like_path(recipe), class: "like-count-border", method: :POST, remote: true do %>
+      いいね
+      <i class="far fa-heart"></i>
+      <%= recipe.likes.count %>
+    <% end %>
+  </td>
+  <% end %>
+<% end %>
