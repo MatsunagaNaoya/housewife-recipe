@@ -15,7 +15,7 @@ RSpec.describe Recipe, type: :model do
       it 'userが紐づいてないと投稿できない' do
         @recipe.user = nil
         @recipe.valid?
-        expect(@recipe.errors.full_messages).to include("User must exist")
+        expect(@recipe.errors.full_messages).to include('User must exist')
       end
       it 'imageが空では投稿できない' do
         @recipe.image = nil
