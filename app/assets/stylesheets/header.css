@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.top a {
+  margin-right: 5px;
+}
+
 .index-header {
   position: fixed;
   top: 0; /* 上部から配置の基準位置を決める */

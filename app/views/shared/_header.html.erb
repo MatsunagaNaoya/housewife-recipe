@@ -1,14 +1,15 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
-  <header class='index-header d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4'>
-          <h1><%= link_to "H.R", root_path, class:"header-title" %></h1>
-          <div class="top">
-              <% if user_signed_in? %>
-                <div class="hello-user">こんにちは、<%= current_user.nickname%>さん</div>
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-primary me-2 logout" %>
-              <% else %>
-                <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-primary me-2" %>
-                <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary" %>
-              <% end %>
-            </div>
-          </div>
-  </header>
+<header class='index-header d-flex align-items-center justify-content-center justify-content-md-between py-3'>
+  <h1><%= link_to "H.R", root_path, class:"header-title" %></h1>
+  <div class="top">
+    <% if user_signed_in? %>
+      <div class="hello-user">こんにちは、<%= current_user.nickname%>さん</div>
+      <%= link_to "あなたのレシピ", user_path(current_user.id), class: "btn btn-primary my-2" %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-primary me-2 logout" %>
+    <% else %>
+      <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-primary me-2" %>
+      <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</header>
