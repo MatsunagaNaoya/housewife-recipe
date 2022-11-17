@@ -1,9 +1,9 @@
 {
-	"[erb]": {
-		"editor.defaultFormatter": "aliariff.vscode-erb-beautify"
-	},
-	"vscode-erb-beautify.useBundler": true,
-	"files.associations": {
-		"*.erb": "erb"
-	}
+  "[erb]": {
+    "editor.defaultFormatter": "aliariff.vscode-erb-beautify"
+  },
+  "vscode-erb-beautify.useBundler": true,
+  "files.associations": {
+    "*.erb": "erb"
+  }
 }
