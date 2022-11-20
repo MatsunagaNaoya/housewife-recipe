@@ -5,7 +5,7 @@ class Category < ActiveHash::Base
     { id: 7, name: '材料３つレシピ' }, { id: 8, name: '時短レシピ' }, { id: 9, name: '熱中症予防レシピ' },
     { id: 10, name: '家族大好きレシピ' }, { id: 11, name: '冷めても美味しい弁当レシピ' }, { id: 12, name: '子供が大好きおやつレシピ' },
     { id: 13, name: 'その他' }
-    ]
+  ]
 
   include ActiveHash::Associations
   has_many :recipes

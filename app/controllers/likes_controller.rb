@@ -11,6 +11,7 @@ class LikesController < ApplicationController
   end
 
   private
+
   def recipe_params
     @recipe = Recipe.find(params[:id])
   end
