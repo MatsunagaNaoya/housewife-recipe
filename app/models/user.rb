@@ -4,9 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
   has_many :recipes, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  belongs_to :prefecture
 
   def liked_by?(recipe_id)
     likes.where(recipe_id: recipe_id).exists?
