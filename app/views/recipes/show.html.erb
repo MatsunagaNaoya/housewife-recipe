@@ -1,3 +1,4 @@
+<%# 料理詳細 %>
   <div class="top-background" >
     <div class="row py-lg-5">
       <div class="recipe-show">
@@ -5,9 +6,11 @@
           <div class="name">
             <%= @recipe.name %>
           </div>
+          <%# 投稿画像 %>
         <div class="item-img-content">
           <%= image_tag @recipe.image, class:"recipe-box" %>
         </div>
+        <%# 詳細テーブル %>
         <table class="detail-table">
           <tbody>
             <tr>
@@ -28,6 +31,7 @@
             </tr>
           </tbody>
         </table>
+        <%# 良いねボタン %>
         <% if user_signed_in? %>
           <div class="like", id="likes_buttons_<%= @recipe.id %>">
             <%= render "likes/like", recipe: @recipe %>
@@ -50,7 +54,7 @@
                   </div>
                 </div>
               <% end %>
-
+            <%# コメント投稿 %>
             <div class="comment-form">
               <% if user_signed_in? %>
                 <%= form_with model: [@recipe, @comment], id: "comment-form" do |f| %>

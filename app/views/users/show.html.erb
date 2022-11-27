@@ -1,8 +1,10 @@
+<%# ユーザー詳細ページ %>
 <div class="top-background">
   <div class="user__wrapper">
     <h2 class="page-heading">
       <%= "#{@user.nickname}さんの情報"%>
     </h2>
+    <%# 登録内容 %>
     <div class="table">
       <table>
         <tbody>
@@ -17,6 +19,13 @@
         </tbody>
       </table>
     </div>
+    <%# ユーザーと同一人物のみ編集可 %>
+    <% if user_signed_in? && @user == current_user %>
+      <div class="user-edit">
+        <%= link_to "編集", edit_user_registration_path, class:"btn btn-primary my-2" %>
+      </div>
+    <% end %>
+    <%# 投稿内容 %>
     <h2 class="page-heading">
       <%= "#{@user.nickname}さんのレシピ"%>
     </h2>
@@ -44,7 +53,10 @@
       </div>
     </div>
   </div>
-  <div class="user-delete">
-    <%= link_to "アカウント削除", "#", method: :delete, class:"btn05" %>
-  </div>
+  <%# 同一人物のみ %>
+  <% if user_signed_in? && @user == current_user %>
+    <div class="user-delete">
+      <%= link_to "退会", "#", method: :delete, class:"btn05" %>
+    </div>
+  <% end %>
 </div>
