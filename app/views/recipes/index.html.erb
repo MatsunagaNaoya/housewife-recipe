@@ -10,6 +10,7 @@
       </p>
     </div>
   </div>
+  <%# レシピ一覧 %>
   <div class="album py-5">
     <div class="container index-recipe">
       <% if @recipes.present? %>
@@ -25,6 +26,7 @@
                 <p class="card-text">料理名:<br>
                   <%= recipe.name %></p>
                 <p class="card-text"><%= recipe.user.nickname %>さん</p>
+                <%# 良いねボタン %>
                 <div id="likes_buttons_<%= recipe.id %>">
                   <%= render "likes/like", recipe: recipe  %>
                 </div>
@@ -33,6 +35,7 @@
           </div>
         <% end %>
       <% else %>
+      <%# レシピが一つも投稿されてない場合 %>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           <div class="col">
             <div class="card shadow-sm">
