@@ -1,9 +1,9 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]#ログインしていない場合、indexとshowビューのみ閲覧可能
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy]#set_recipeの情報を先に所得(show,edit,update,destroyのみ)
 
   def index
-    @recipes = Recipe.includes(:user).order('created_at DESC')
+    @recipes = Recipe.includes(:user).order('created_at DESC')#レシピの情報をユーザーが新規投稿した順に表示
   end
 
   def new
