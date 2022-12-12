@@ -7,15 +7,15 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipe = Recipe.new
+    @recipe = Recipe.new #レシピ新規投稿内容を入手
   end
 
   def create
-    @recipe = Recipe.create(recipe_params)
-    if @recipe.save
-      redirect_to root_path
-    else
-      render :new
+    @recipe = Recipe.create(recipe_params)#レシピ投稿作成データを変数化
+    if @recipe.save#保存が成功した場合
+      redirect_to root_path#メインページに遷移
+    else#保存失敗パターン
+      render :new#同じページを再表示(入力データをそのまま)
     end
   end
 
@@ -25,12 +25,12 @@ class RecipesController < ApplicationController
   end
 
   def edit
-    redirect_to root_path if current_user.id != @recipe.user_id
+    redirect_to root_path if current_user.id != @recipe.user_id #今のユーザーと投稿したユーザーが違う場合、メインページに遷移
   end
 
   def update
-    if @recipe.update(recipe_params)
-      redirect_to recipe_path(@recipe.id)
+    if @recipe.update(recipe_params)#更新成功した場合
+      redirect_to recipe_path(@recipe.id)#編集した詳細ページに遷移
     else
       render :edit
     end
