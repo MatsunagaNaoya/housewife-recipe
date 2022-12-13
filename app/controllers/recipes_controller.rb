@@ -20,8 +20,8 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @comments = @recipe.comments.includes(:user)
-    @comment = Comment.new
+    @comments = @recipe.comments.includes(:user)#レシピのコメント等をユーザーデータから所得して変数化
+    @comment = Comment.new#コメント投稿した内容を変数化
   end
 
   def edit
@@ -37,9 +37,9 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    if current_user.id == @recipe.user_id
-      @recipe.destroy
-      redirect_to root_path
+    if current_user.id == @recipe.user_id#今のユーザーと投稿者が同じなら実行
+      @recipe.destroy#該当レシピを削除
+      redirect_to root_path#トップページに遷移
     end
   end
 
